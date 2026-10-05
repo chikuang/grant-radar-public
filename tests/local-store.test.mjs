@@ -1,0 +1,27 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+import path from 'node:path';
+import {createRequire} from 'node:module';
+import ts from 'typescript';
+const require=createRequire(import.meta.url),cache=new Map();
+function load(name){
+ if(cache.has(name))return cache.get(name);
+ const filename=path.resolve('lib',name+'.ts'),exports={};cache.set(name,exports);
+ const code=ts.transpileModule(fs.readFileSync(filename,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
+ vm.runInNewContext(code,{exports,require:p=>p.startsWith('./')?load(p.slice(2)):require(p),Date,Intl,TextEncoder,crypto:globalThis.crypto},{filename});return exports;
+}
+const {LocalWorkspace,STORAGE_KEY,parseBackup}=load('local-store');
+const {newProposal,calendarFile}=load('model');
+function memory(){const data=new Map();return {data,getItem:k=>data.get(k)??null,setItem:(k,v)=>data.set(k,v)};}
+test('new visitors start with their own blank identity and no proposals',()=>{const db=new LocalWorkspace(memory(),'Europe/London'),state=db.read();assert.equal(state.profile.name,'');assert.equal(state.profile.institution,'');assert.equal(state.profile.citizenship,'');assert.equal(state.profile.taiwanStatus,'unknown');assert.equal(state.profile.timezone,'Europe/London');assert.equal(state.proposals.length,0);});
+test('save, reload, edit and remove persist only in the public storage key',()=>{const m=memory(),db=new LocalWorkspace(m);const p={...newProposal(),title:'My proposal',notes:'Keep this note'};db.update('proposal',p);const next=new LocalWorkspace(m);assert.equal(next.read().proposals[0].notes,'Keep this note');next.update('proposal',{...p,notes:'Updated'});assert.equal(db.read().proposals[0].notes,'Updated');assert.deepEqual([...m.data.keys()],[STORAGE_KEY]);db.update('remove',undefined,p.id);assert.equal(db.read().proposals.length,0);});
+test('independent browser stores do not share profiles or proposals',()=>{const a=new LocalWorkspace(memory()),b=new LocalWorkspace(memory());a.update('proposal',{...newProposal(),title:'A only'});assert.equal(b.read().proposals.length,0);});
+test('separate tabs read current saved state before each mutation',()=>{const m=memory(),a=new LocalWorkspace(m),b=new LocalWorkspace(m);a.read();b.read();a.update('proposal',{...newProposal(),title:'First'});b.update('proposal',{...newProposal(),title:'Second'});assert.equal(a.read().proposals.length,2);});
+test('backup round trip merges without overwriting existing proposal notes',()=>{const a=new LocalWorkspace(memory()),b=new LocalWorkspace(memory());const p={...newProposal(),title:'Original',notes:'Old'};a.update('proposal',p);a.update('profile',{...a.read().profile,name:'Backup name'});a.update('proposal',{...newProposal(),title:'New proposal'});b.update('proposal',{...p,notes:'Newer note'});const backup=parseBackup(JSON.stringify(a.export()));const result=b.merge(backup,false);assert.equal(result.added,1);assert.equal(result.kept,1);assert.equal(b.read().proposals.find(v=>v.id===p.id).notes,'Newer note');assert.equal(b.read().profile.name,'');b.merge(backup,true);assert.equal(b.read().profile.name,'Backup name');assert.equal(b.read().proposals.length,2);});
+test('invalid and future-format backups cannot change saved data',()=>{const m=memory(),db=new LocalWorkspace(m);db.update('proposal',{...newProposal(),title:'Preserve me'});const before=m.getItem(STORAGE_KEY);for(const raw of ['not JSON',JSON.stringify({...db.export(),version:99}),JSON.stringify({...db.export(),proposals:[{...newProposal(),title:'Bad',url:'javascript:alert(1)'}]})])assert.throws(()=>parseBackup(raw));assert.equal(m.getItem(STORAGE_KEY),before);});
+test('invalid deadlines and duplicate IDs in backups are rejected',()=>{const db=new LocalWorkspace(memory());const p={...newProposal(),title:'Bad DST time',deadline:'2027-03-14T02:30',timezone:'America/New_York'};assert.throws(()=>db.update('proposal',p));const valid={...p,deadline:'2027-03-14T03:30'};assert.throws(()=>parseBackup(JSON.stringify({...db.export(),proposals:[valid,valid]})));assert.equal(db.read().proposals.length,0);});
+test('corrupt stored data is retained and never silently reset',()=>{const m=memory();m.setItem(STORAGE_KEY,'broken data');const db=new LocalWorkspace(m);assert.throws(()=>db.read(),/preserved/);assert.throws(()=>db.update('proposal',{...newProposal(),title:'New'}));assert.equal(db.raw(),'broken data');});
+test('storage quota and blocked reads surface errors without losing data',()=>{const m=memory(),db=new LocalWorkspace(m);db.update('proposal',{...newProposal(),title:'Saved'});const before=db.raw();m.setItem=()=>{throw Error('QuotaExceededError');};assert.throws(()=>db.update('proposal',{...newProposal(),title:'Cannot save'}),/Save failed/);assert.equal(db.raw(),before);assert.throws(()=>new LocalWorkspace({getItem(){throw Error('blocked');},setItem(){}}).read(),/unavailable/);});
+test('calendar export preserves zones, offsets and excludes submitted proposals',()=>{const p={...newProposal(),title:'Deadline; sample',deadline:'2027-01-15T17:00',timezone:'America/New_York',internalDeadline:'2027-01-08T17:00',reminderDays:[7,1]};const ics=calendarFile([p]);assert.match(ics,/DTSTART:20270115T220000Z/);assert.match(ics,/DTSTART:20270108T220000Z/);assert.match(ics,/TRIGGER:-P7D/);assert.equal((ics.match(/BEGIN:VEVENT/g)||[]).length,2);assert.doesNotMatch(calendarFile([{...p,status:'submitted'}]),/BEGIN:VEVENT/);});

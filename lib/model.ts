@@ -1,0 +1,23 @@
+import type {Grant,Profile} from './grants';
+export type Proposal={id:string;grantId:string;title:string;agency:string;deadline:string;internalDeadline:string;timezone:string;deadlineKind:'funder'|'personal';status:'saved'|'writing'|'review'|'submitted';notes:string;checks:string[];url:string;reminderDays:number[];createdAt:string};
+export const stages={saved:'Saved',writing:'Writing',review:'Institutional review',submitted:'Submitted'};
+export const checklist=['Verify eligibility and official deadline','Contact program officer and collaborators','Complete project summary or specific aims','Complete research plan and budget','Complete institutional review and submission'];
+export function newProposal(g?:Grant,p?:Profile):Proposal{return {id:crypto.randomUUID(),grantId:g?.id||'',title:g?.title||'',agency:g?.agency||'',deadline:g?.deadlineType==='fixed'?g.deadline:'',internalDeadline:'',timezone:g?.deadlineTimezone||p?.timezone||'America/New_York',deadlineKind:g?.deadlineType==='fixed'?'funder':'personal',status:'saved',notes:g?[g.deadlineNote,g.nextStep&&'Next step: '+g.nextStep].filter(Boolean).join('\n\n'):'',checks:[],url:g?.url||'',reminderDays:p?.reminderDays||[30,14,7,1],createdAt:new Date().toISOString()}}
+export function zonedDate(value:string,timezone:string){
+ if(!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(value))throw Error('Enter a valid date and time');
+ const nums=value.split(/[-T:]/).map(Number);const target=Date.UTC(nums[0],nums[1]-1,nums[2],nums[3],nums[4]);
+ const f=new Intl.DateTimeFormat('en-US',{timeZone:timezone,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
+ let guess=target;let result='';
+ for(let i=0;i<4;i++){const a=Object.fromEntries(f.formatToParts(new Date(guess)).map(x=>[x.type,x.value]));result=`${a.year}-${a.month}-${a.day}T${a.hour}:${a.minute}`;if(result===value)return new Date(guess);guess+=target-Date.UTC(+a.year,+a.month-1,+a.day,+a.hour,+a.minute)}
+ throw Error('Invalid date or time zone, or a daylight-saving clock gap');
+}
+export function daysLeft(deadline:string,tz:string,now=Date.now()){if(!deadline)return null;try{return Math.ceil((zonedDate(deadline,tz).getTime()-now)/86400000)}catch{return null}}
+export function reminders(proposals:Proposal[],now=Date.now()){
+ return proposals.filter(p=>p.status!=='submitted').flatMap(p=>[{date:p.deadline,kind:p.deadlineKind==='personal'?'Personal target':'Application deadline'},{date:p.internalDeadline,kind:'Internal deadline'}].filter(d=>d.date).flatMap(d=>{const days=daysLeft(d.date,p.timezone,now);if(days===null)return [];const passed=zonedDate(d.date,p.timezone).getTime()<now;const within=p.reminderDays.some(n=>days<=n);return within||passed?[{id:p.id+'-'+d.kind,proposal:p,kind:d.kind,date:d.date,days,overdue:passed}]:[]})).sort((a,b)=>zonedDate(a.date,a.proposal.timezone).getTime()-zonedDate(b.date,b.proposal.timezone).getTime());
+}
+export function calendarFile(list:Proposal[]){const esc=(s:string)=>s.replace(/\\/g,'\\\\').replace(/\r?\n/g,'\\n').replace(/,/g,'\\,').replace(/;/g,'\\;');const stamp=(d:Date)=>d.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Grant Radar//Research Deadlines//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH'];
+ for(const p of list.filter(p=>p.status!=='submitted'))for(const e of [{value:p.deadline,label:p.deadlineKind==='personal'?'Personal submission target':'Application deadline',suffix:'deadline'},{value:p.internalDeadline,label:'Internal deadline',suffix:'internal'}]){if(!e.value)continue;const start=zonedDate(e.value,p.timezone);lines.push('BEGIN:VEVENT',`UID:${p.id}-${e.suffix}@grant-radar`,`DTSTAMP:${stamp(new Date())}`,`DTSTART:${stamp(start)}`,`DTEND:${stamp(new Date(start.getTime()+1800000))}`,`SUMMARY:${esc(e.label+' | '+p.title)}`,`DESCRIPTION:${esc(p.agency+'\nTime zone: '+p.timezone+'\n'+p.notes+'\nOfficial source: '+p.url)}`);if(p.url)lines.push(`URL:${p.url}`);for(const n of p.reminderDays)lines.push('BEGIN:VALARM',`TRIGGER:-P${n}D`,'ACTION:DISPLAY',`DESCRIPTION:${esc(`${p.title} — ${n} days before ${e.label}`)}`,'END:VALARM');lines.push('END:VEVENT')}
+ lines.push('END:VCALENDAR');return lines.map(line=>{let chunk='',bytes=0,out='';for(const ch of line){let n=new TextEncoder().encode(ch).length;if(bytes+n>73){out+=chunk+'\r\n ';chunk='';bytes=1}chunk+=ch;bytes+=n}return out+chunk}).join('\r\n')+'\r\n';}
+
+const legacyChecks=['確認申請資格與官方截止日', '聯絡 program officer / 合作團隊', '完成 project summary / specific aims', '完成研究計畫與預算', '完成校內審核與送件'];
+export function normalizeProposal(p:Proposal):Proposal{return {...p,checks:p.checks.map(c=>{const i=legacyChecks.indexOf(c);return i<0?c:checklist[i]})};}
