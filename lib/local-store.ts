@@ -9,7 +9,7 @@ const timezone=z.string().max(100).refine(value=>{try{new Intl.DateTimeFormat('e
 const date=z.string().max(16).refine(value=>!value||/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(value));
 const url=z.string().max(2000).refine(value=>!value||/^https?:\/\//i.test(value)&&!/[\r\n]/.test(value),'Use an HTTP or HTTPS URL');
 const days=z.array(z.number().int().min(1).max(365)).max(10);
-export const profileSchema=z.object({name:text,institution:text,role:text,country:text,state:text,citizenship:text,canadianAppointment:z.enum(['unknown','yes','no']),taiwanStatus:z.enum(['citizen','other','unknown']),taiwanAppointment:z.enum(['unknown','yes','no']),website:url,keywords:text,tenure:z.enum(['unknown','yes','no']),priorCareer:z.enum(['unknown','yes','no']),timezone,reminderDays:days});
+export const profileSchema=z.object({name:text,institution:text,role:text,country:text,state:text,citizenship:text,canadianAppointment:z.enum(['unknown','yes','no']),taiwanStatus:z.enum(['citizen','other','unknown']),taiwanAppointment:z.enum(['unknown','yes','no']),website:url,keywords:text,tenure:z.enum(['unknown','yes','no']),priorCareer:z.enum(['unknown','yes','no']),timezone,reminderDays:days,audience:z.enum(['faculty','students','both']).default('both'),supportInterests:z.array(z.enum(['Grant','Research award','Compute','Fellowship','Scholarship','Assistantship','Research visit'])).max(7).default([]),setupComplete:z.boolean().default(false)});
 export const proposalSchema=z.object({id:z.string().min(1).max(100),grantId:z.string().max(120),title:z.string().trim().min(1).max(500),agency:z.string().max(300),deadline:date,internalDeadline:date,timezone,deadlineKind:z.enum(['funder','personal']),status:z.enum(['saved','writing','review','submitted']),notes:text,checks:z.array(z.string().max(300)).max(20),url,reminderDays:days,createdAt:z.string().datetime()}).superRefine((p,ctx)=>{for(const key of ['deadline','internalDeadline'] as const){if(p[key])try{zonedDate(p[key],p.timezone);}catch{ctx.addIssue({code:'custom',path:[key],message:'Invalid deadline or daylight-saving clock gap'});}}});
 const proposalsSchema=z.array(proposalSchema).max(2000).refine(rows=>new Set(rows.map(p=>p.id)).size===rows.length,'Duplicate proposal IDs');
 const stateSchema=z.object({profile:profileSchema,proposals:proposalsSchema});
@@ -28,8 +28,8 @@ export class LocalWorkspace {
   read():WorkspaceState {
     let raw:string|null;
     try{raw=this.storage.getItem(STORAGE_KEY);}catch{throw Error('Browser storage is unavailable. Allow site storage to save your workspace.');}
-    if(raw===null)return {profile:profileSchema.parse({...initialProfile,keywords:'Statistics, Machine learning',timezone:this.zone,reminderDays:[...initialProfile.reminderDays]}),proposals:[]};
-    try{return stateSchema.parse(JSON.parse(raw));}catch{throw Error('Saved data could not be read. It has been preserved. Use Backups to download the stored data before troubleshooting.');}
+    if(raw===null)return {profile:profileSchema.parse({...initialProfile,timezone:this.zone,reminderDays:[...initialProfile.reminderDays]}),proposals:[]};
+    try{const state=stateSchema.parse(JSON.parse(raw));if(!state.profile.setupComplete&&!state.profile.name&&!state.profile.institution&&!state.profile.role&&state.profile.keywords==='Statistics, Machine learning')state.profile.keywords='';return state;}catch{throw Error('Saved data could not be read. It has been preserved. Use Backups to download the stored data before troubleshooting.');}
   }
   private save(state:WorkspaceState):WorkspaceState {
     const valid=stateSchema.parse(state);

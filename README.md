@@ -6,15 +6,17 @@ Discover research funding, AI compute and student support, then track proposals 
 
 ## What you can do
 
-- Browse 45 curated opportunities, including NAIRR, NSF, industry research awards, GPU/TPU allocations, cloud/API credits, and student support.
+- Start with a blank profile: enter your own topics, role, institution, country and support preferences.
+- View matches from 37 public program records, including NAIRR, NSF, industry awards, computing allocations and student support.
+- Search beyond the directory through external funding portals and personalized web-search links; add a result as your own proposal.
 - Filter by research area, provider collection, support type and announcement status.
 - Save your own research profile and keywords for topic matching.
 - Track proposal notes, progress, application dates, internal deadlines and preparation checklists.
 - View reminders while the app is open and download calendar events with advance alarms.
 - Export a JSON backup, preview an imported backup, and merge new proposals without overwriting existing proposal IDs. Restoring the profile is a separate opt-in.
-- Download a public student funding and computing guide.
+- Download a student guide drawn from the visitor’s current topic matches.
 
-The catalog began with statistics and statistical machine learning interests and includes US, Canada, Taiwan, Georgia and GSU-specific routes. These are not universal eligibility recommendations. Institution-specific programs stay labeled, and every listing links to the official requirements. Research-keyword overlap is not an eligibility decision. Sources were reviewed on October 4, 2026; individual records carry their verification date. Unannounced cycles and unconfirmed intake routes are distinguished from confirmed deadlines.
+The app does not load the author’s profile, research-fit notes, campus shortlist or tracked proposals. No program cards are shown until a visitor saves their own profile. The directory contains general public program facts; campus-specific and Georgia-only seed listings have been removed. Default discovery uses explicit keyword matches, requested support types, audience and broad institutional-country restrictions. A visitor can choose to browse the full public directory. Matching does not determine citizenship, institutional or program eligibility. Coverage is currently strongest in science, AI and research computing; unrelated fields may have no matches. Sources were reviewed on October 4, 2026; individual records carry their verification date. Unannounced cycles and unconfirmed intake routes are distinguished from confirmed deadlines.
 
 ## Your data
 
@@ -24,7 +26,7 @@ Browser storage is not encrypted. Anyone using the same browser profile can acce
 
 There is no background push, email, or automatic cross-device sync. Calendar exports are snapshots; re-export after changing dates and manage duplicate events in your calendar. Confirm that your calendar imports the alarms. Date-only or rolling listings require a confirmed time or a personal target before reminders are created.
 
-The Grants.gov button opens its public search website. This static edition does not use the private app's authenticated search API.
+External-search buttons open funding portals or Google searches built from the visitor’s topics/country or institution. Search terms are sent only when the visitor follows the link; proposal notes are never included. These searches are not performed automatically and results are not imported into the directory.
 
 ## Run and build
 
@@ -41,7 +43,7 @@ The production app is built into `docs/` for GitHub Pages. Relative asset paths 
 
 ## Maintain the catalog
 
-Edit `lib/grants.ts`, `lib/expanded-grants.ts` and `lib/compute-grants.ts`. Use official sources and update only verification dates actually checked. Keep monthly or quarterly review batches separate from hard deadlines; never infer a new year for an unannounced call. Preserve IDs so saved proposals continue to reference the same program. Run the tests and build before committing. Catalog updates do not overwrite a visitor's saved deadlines or notes; visitors must review their saved proposals when a funder changes a date.
+Edit `lib/catalog.ts`. Keep it independent from the private app’s personalized catalog: include only public program facts, never personal research-fit explanations, author-specific next steps or campus shortlists. Profile/matching rules are in `lib/grants.ts` and `lib/matching.ts`. Use official sources and update only verification dates actually checked. Keep monthly or quarterly review batches separate from hard deadlines; never infer a new year for an unannounced call. Preserve IDs so saved proposals continue to reference the same program. Run the tests and build before committing. Catalog updates do not overwrite a visitor's saved deadlines or notes; visitors must review their saved proposals when a funder changes a date.
 
 The owner's weekly Sunday catalog review also maintains this public edition. Its published data is a dated snapshot, not a guarantee that every source has been rechecked that week.
 
