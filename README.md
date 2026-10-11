@@ -7,7 +7,7 @@ Discover research funding, AI compute and student support, then track proposals 
 ## What you can do
 
 - Start with a blank profile: enter your own topics, role, institution, country and support preferences.
-- View matches from 37 public program records, including NAIRR, NSF, industry awards, computing allocations and student support.
+- View matches from 42 public program records, including NAIRR, NSF, industry awards, computing allocations and student support.
 - Search beyond the directory through external funding portals and personalized web-search links; add a result as your own proposal.
 - Filter by research area, provider collection, support type and announcement status.
 - Save your own research profile and keywords for topic matching.
@@ -16,7 +16,7 @@ Discover research funding, AI compute and student support, then track proposals 
 - Export a JSON backup, preview an imported backup, and merge new proposals without overwriting existing proposal IDs. Restoring the profile is a separate opt-in.
 - Download a student guide drawn from the visitor’s current topic matches.
 
-The app does not load the author’s profile, research-fit notes, campus shortlist or tracked proposals. No program cards are shown until a visitor saves their own profile. The directory contains general public program facts; campus-specific and Georgia-only seed listings have been removed. Default discovery uses explicit keyword matches, requested support types, audience and broad institutional-country restrictions. A visitor can choose to browse the full public directory. Matching does not determine citizenship, institutional or program eligibility. Coverage is currently strongest in science, AI and research computing; unrelated fields may have no matches. Sources were reviewed on October 4, 2026; individual records carry their verification date. Unannounced cycles and unconfirmed intake routes are distinguished from confirmed deadlines.
+The app does not load the author’s profile, research-fit notes, campus shortlist or tracked proposals. No program cards are shown until a visitor saves their own profile. The directory contains general public program facts; campus-specific and Georgia-only seed listings have been removed. Default discovery uses explicit keyword matches, requested support types, audience and broad institutional-country restrictions. A visitor can choose to browse the full public directory. Matching does not determine citizenship, institutional or program eligibility. Coverage is currently strongest in science, AI and research computing; unrelated fields may have no matches. Sources were reviewed on October 11, 2026; individual records carry their verification date. Unannounced cycles and unconfirmed intake routes are distinguished from confirmed deadlines.
 
 ## Your data
 

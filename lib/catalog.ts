@@ -3,7 +3,7 @@ import type {Grant} from './grants';
 // Public program facts only. Never copy an individual’s profile, research-fit notes or tracked items here.
 export const publicCatalog:Grant[] = [
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "faculty",
     "support": "Grant",
@@ -29,7 +29,7 @@ export const publicCatalog:Grant[] = [
     "institutionCountry": "US"
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "2027-07-28",
     "audience": "faculty",
     "support": "Grant",
@@ -55,7 +55,7 @@ export const publicCatalog:Grant[] = [
     "institutionCountry": "US"
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "2026-10-16",
     "audience": "faculty",
     "support": "Grant",
@@ -80,7 +80,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "faculty",
     "support": "Grant",
@@ -105,7 +105,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "faculty",
     "support": "Grant",
@@ -130,7 +130,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "2026-11-04T23:59",
     "audience": "faculty",
     "support": "Research award",
@@ -164,7 +164,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "both",
     "support": "Compute",
@@ -187,13 +187,13 @@ export const publicCatalog:Grant[] = [
     "deadlineType": "rolling",
     "deadlineNote": "Explore, Discover, and Accelerate accept requests at any time. Maximize uses separate rounds.",
     "url": "https://allocations.access-ci.org/project-types",
-    "amount": "Explore: up to 400,000 credits; Discover: up to 1.5 million",
-    "eligibility": "US-based institutional researchers may apply. Graduate students can lead Explore/Discover with advisor support; undergraduates need a faculty PI. Resource-specific restrictions apply.",
+    "amount": "Explore: up to 400,000 credits; Discover: 1.5 million; Accelerate: 3 million",
+    "eligibility": "US-based institutional researchers may apply using institutional email. Graduate students can lead Explore/Discover with advisor support; undergraduates need a faculty PI. Resource-specific restrictions apply.",
     "reason": "",
     "institutionCountry": "US"
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "both",
     "support": "Compute",
@@ -222,9 +222,9 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
-    "audience": "faculty",
+    "audience": "both",
     "support": "Compute",
     "id": "google-cloud",
     "title": "Google Cloud Research Credits",
@@ -239,17 +239,19 @@ export const publicCatalog:Grant[] = [
     "collections": [
       "industry",
       "compute",
-      "ml"
+      "ml",
+      "students"
     ],
     "deadlineType": "unknown",
     "deadlineNote": "Credit application linked; no fixed deadline listed. Check current intake.",
     "url": "https://cloud.google.com/edu/researchers",
     "amount": "Apply for US$5,000 in research credits",
-    "eligibility": "Confirm institution, country, applicant, and service requirements in the application. Approval and accelerator availability are not guaranteed.",
-    "reason": ""
+    "eligibility": "Faculty, postdoctoral and nonprofit researchers, and PhD students may apply. Institution, supported-country and service conditions apply; approval and accelerator availability are not guaranteed.",
+    "reason": "",
+    "studentAccess": "check"
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "both",
     "support": "Compute",
@@ -278,7 +280,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "2026-11-02T20:00",
     "audience": "faculty",
     "support": "Grant",
@@ -306,7 +308,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "2026-10-30",
     "audience": "students",
     "support": "Fellowship",
@@ -334,7 +336,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "2026-10-23T20:00",
     "audience": "students",
     "support": "Fellowship",
@@ -343,7 +345,7 @@ export const publicCatalog:Grant[] = [
     "agency": "NSF",
     "code": "GRFP · NSF 26-526",
     "studentAccess": "us",
-    "summary": "Early graduate research support for eligible mathematics and statistics students.",
+    "summary": "Early graduate research support for eligible mathematics and statistics students. Reference letters are due October 16, before applications.",
     "tags": [
       "Graduate",
       "Statistics",
@@ -355,15 +357,15 @@ export const publicCatalog:Grant[] = [
     ],
     "deadlineTimezone": "America/New_York",
     "deadlineType": "fixed",
-    "deadlineNote": "Mathematical Sciences: October 23, 2026, 8 pm Eastern. CISE is earlier: October 20, 8 pm Eastern. Select the correct field.",
+    "deadlineNote": "Reference letters are due FIRST: October 16, 2026, 8 pm Eastern. Mathematical Sciences applications: October 23, 8 pm Eastern; CISE: October 20, 8 pm Eastern. Select the correct field.",
     "url": "https://www.nsf.gov/funding/opportunities/grfp-nsf-graduate-research-fellowship-program/nsf26-526/solicitation",
     "amount": "US$37,000 annual stipend + US$16,000 institutional allowance; 3 years of support",
-    "eligibility": "Student must be a US citizen, national, or permanent resident and meet current degree-stage, field, and prior-application rules. Canadian citizenship alone does not qualify.",
+    "eligibility": "US citizens, nationals or permanent residents only. Graduate applicants must be in the first year of their first graduate degree with less than one academic year completed; second-year graduate students are ineligible. Graduate applicants may apply once. Separate rules cover undergraduates and joint bachelor’s/master’s students; check field and prior-application restrictions.",
     "reason": "",
     "institutionCountry": "US"
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "2026-10-19T20:00",
     "audience": "students",
     "support": "Scholarship",
@@ -393,7 +395,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "students",
     "support": "Fellowship",
@@ -421,7 +423,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "2026-11-04T23:59",
     "audience": "faculty",
     "id": "amazon-agentic-ai",
@@ -456,7 +458,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "both",
     "id": "nvidia-academic",
@@ -492,7 +494,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "both",
     "id": "google-trc",
@@ -517,11 +519,11 @@ export const publicCatalog:Grant[] = [
     "deadlineNote": "Expressions of interest are accepted; invitations are issued on a rolling basis.",
     "url": "https://sites.research.google/trc/faq/",
     "amount": "Approved TPU quota at no charge; VM, storage, and other cloud charges are separate",
-    "eligibility": "Anyone may express interest; approval, availability, and terms apply. Recipients share research outcomes and feedback. This is TPU access, not unrestricted cloud credits.",
+    "eligibility": "Anyone may express interest; approval, availability and terms apply. Recipients share research outcomes and feedback. TPU quota does not support Vertex AI workflows. VM, storage and other cloud charges are separate.",
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "both",
     "id": "anthropic-researcher",
@@ -550,16 +552,18 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "faculty",
     "id": "anthropic-science",
     "title": "AI for Science Program",
     "agency": "Anthropic",
-    "code": "Life sciences research",
+    "code": "Natural sciences & mathematics",
     "support": "Compute",
-    "summary": "Claude API support for projects that accelerate scientific discovery, with a life-sciences emphasis.",
+    "summary": "Claude API support for discovery in natural sciences and mathematics, with a life-sciences emphasis.",
     "tags": [
+      "Mathematics",
+      "Statistics",
       "Biomedical",
       "Drug discovery",
       "Neuroscience",
@@ -574,11 +578,11 @@ export const publicCatalog:Grant[] = [
     "deadlineNote": "The linked application describes monthly reviews. No fixed closing date or award amount is published here.",
     "url": "https://www.anthropic.com/news/ai-for-science-program",
     "amount": "API credits; amount determined by the program",
-    "eligibility": "Describe a substantive scientific problem and how AI advances it. Research qualifications, scientific impact, account requirements, and program terms must be checked in the application.",
+    "eligibility": "Researchers at qualified nonprofit academic or research institutions must explain a substantive natural-science or mathematics question and how AI advances it. Scientific impact, account and program conditions apply.",
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "faculty",
     "id": "azure-research",
@@ -605,7 +609,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "faculty",
     "id": "taiwan-nstc-short-visit",
@@ -632,7 +636,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "faculty",
     "id": "taiwan-nstc-visiting-faculty",
@@ -655,11 +659,11 @@ export const publicCatalog:Grant[] = [
     "deadlineNote": "Coordinate the host application and review schedule. Visits are normally 3–12 months; no fixed submission deadline is verified here.",
     "url": "https://law.nstc.gov.tw/LawContent.aspx?id=FL031557",
     "amount": "Approved research / teaching remuneration and round-trip economy airfare",
-    "eligibility": "An eligible Taiwan host applies. Visiting assistant professors need appropriate academic credentials and research publications; overseas personnel generally need at least one continuous year at an overseas institution. A funded Taiwan appointment and its duties are required during the visit.",
+    "eligibility": "An eligible Taiwan host applies. Visiting assistant professors need appropriate academic credentials and publications; overseas personnel generally need at least one continuous year at an overseas institution. The funded host appointment must be full-time during the visit.",
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "faculty",
     "id": "taiwan-ncts-pairs",
@@ -679,8 +683,8 @@ export const publicCatalog:Grant[] = [
       "taiwan"
     ],
     "deadlineType": "unknown",
-    "deadlineNote": "Calls are announced in April, July, and November. Exact next deadline unconfirmed; applying at least three months before the visit is recommended.",
-    "url": "https://ncts.ntu.edu.tw/upload/downloadfs9260109415316843.pdf",
+    "deadlineNote": "Calls are announced in April, August and December. Exact next cutoff unconfirmed; applying at least three months before the visit is recommended.",
+    "url": "https://ncts.ntu.edu.tw/news_detail.php?nid=231",
     "relatedSources": [
       {
         "label": "NCTS application routes",
@@ -688,11 +692,11 @@ export const publicCatalog:Grant[] = [
       }
     ],
     "amount": "Visiting financial support; round-trip airfare is excluded",
-    "eligibility": "A group of 2–4 researchers, not all from the same institution, proposes a 2–8 week research visit. Probability, analysis, scientific computing, and interdisciplinary mathematics are among the priority areas. A prior Taiwan appointment is not specified.",
+    "eligibility": "Groups of 2–4 researchers from different institutions, including at least one affiliated outside Taiwan, propose a 2–8 week visit. Mathematical-science topic and call conditions apply. A prior Taiwan appointment is not specified.",
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "faculty",
     "id": "taiwan-nchc-compute",
@@ -721,7 +725,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "both",
     "support": "Compute",
@@ -762,7 +766,7 @@ export const publicCatalog:Grant[] = [
     "institutionCountry": "US"
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "both",
     "support": "Compute",
@@ -808,7 +812,7 @@ export const publicCatalog:Grant[] = [
     "institutionCountry": "US"
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "both",
     "support": "Compute",
@@ -849,7 +853,7 @@ export const publicCatalog:Grant[] = [
     "institutionCountry": "US"
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "faculty",
     "support": "Compute",
@@ -885,7 +889,7 @@ export const publicCatalog:Grant[] = [
     "institutionCountry": "US"
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "both",
     "support": "Compute",
@@ -921,7 +925,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "both",
     "support": "Compute",
@@ -951,7 +955,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "both",
     "support": "Compute",
@@ -977,11 +981,17 @@ export const publicCatalog:Grant[] = [
     "deadlineNote": "Apply from Space hardware settings. No fixed closing date or review timetable is published in the documentation.",
     "url": "https://huggingface.co/docs/hub/spaces-gpus",
     "amount": "Approved GPU hosting for a specific Space; amount and duration depend on approval",
-    "eligibility": "A working Space and a compelling use case are needed. This is support for hosted demos, not an unrestricted training-cluster allocation; selection is discretionary.",
-    "reason": ""
+    "eligibility": "A working public Space and compelling community use case are required. This funds hosted demos, not unrestricted training. Selection and resource availability apply. Check current Spaces creation and billing requirements: a GPU grant is not a blanket subscription-fee waiver.",
+    "reason": "",
+    "relatedSources": [
+      {
+        "label": "Spaces creation and billing rules",
+        "url": "https://huggingface.co/docs/hub/spaces-overview"
+      }
+    ]
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "faculty",
     "support": "Compute",
@@ -1009,7 +1019,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "faculty",
     "support": "Compute",
@@ -1037,7 +1047,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "faculty",
     "support": "Compute",
@@ -1065,7 +1075,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "faculty",
     "support": "Compute",
@@ -1099,7 +1109,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-04",
+    "checked": "2026-10-11",
     "deadline": "",
     "audience": "faculty",
     "support": "Compute",
@@ -1124,6 +1134,191 @@ export const publicCatalog:Grant[] = [
     "url": "https://go.oracle.com/research-project-award?elqCampaignId=314509",
     "amount": "OCI credits sized to the proposal and usage requirements; no fixed award amount",
     "eligibility": "Project acceptance and regional restrictions apply. Oracle assesses research impact, cloud benefit, and PI/institution experience. Institutional signatures or acceptance of cloud agreements are required before activation.",
+    "reason": ""
+  },
+  {
+    "id": "google-gemini-academic",
+    "title": "Gemini Academic Program",
+    "agency": "Google",
+    "code": "Research API credits",
+    "support": "Compute",
+    "audience": "both",
+    "studentAccess": "check",
+    "summary": "Gemini API credits and higher rate limits for academic AI research.",
+    "tags": [
+      "Machine learning",
+      "AI evaluation",
+      "LLM alignment",
+      "Scientific discovery",
+      "Reasoning"
+    ],
+    "collections": [
+      "industry",
+      "compute",
+      "ml",
+      "students"
+    ],
+    "deadline": "",
+    "deadlineType": "rolling",
+    "deadlineNote": "Monthly application reviews; no fixed closing date. The documentation links an application, whose detailed form terms were not independently verified.",
+    "url": "https://ai.google.dev/gemini-api/docs/gemini-for-research",
+    "relatedSources": [
+      {
+        "label": "Supported Gemini API locations",
+        "url": "https://ai.google.dev/gemini-api/docs/available-regions"
+      }
+    ],
+    "amount": "API credits and higher rate limits; amount determined by review",
+    "eligibility": "Academic/research affiliation is required; faculty, research staff and PhD students are included. Supported locations and program terms apply. Review interests include evaluation, safety, reasoning, multimodal learning and scientific discovery.",
+    "checked": "2026-10-11",
+    "reason": ""
+  },
+  {
+    "id": "access-maximize",
+    "title": "Maximize ACCESS Research Computing",
+    "agency": "NSF ACCESS",
+    "code": "Winter 2026–2027 allocation round",
+    "support": "Compute",
+    "audience": "both",
+    "studentAccess": "check",
+    "summary": "Large research-computing allocations for work beyond the smaller ACCESS tiers.",
+    "tags": [
+      "Scientific computing",
+      "Machine learning",
+      "GPU",
+      "High performance computing"
+    ],
+    "collections": [
+      "compute",
+      "ml",
+      "students"
+    ],
+    "deadline": "2027-01-31",
+    "deadlineType": "date",
+    "deadlineNote": "Opens December 15, 2026; closes January 31, 2027. The next window has not opened. Exact cutoff time and time zone are not published. Awards start April 1, 2027.",
+    "url": "https://allocations.access-ci.org/prepare-requests",
+    "relatedSources": [
+      {
+        "label": "ACCESS allocation policy",
+        "url": "https://allocations.access-ci.org/allocations-policy"
+      }
+    ],
+    "amount": "Resource allocations, generally for 12 months; no universal maximum",
+    "eligibility": "US-based institutional researchers, including postdocs, can lead requests. Graduate students need a qualified PI. Provider restrictions apply. A scientific/resource justification, scaling evidence and CVs are required.",
+    "checked": "2026-10-11",
+    "reason": "",
+    "institutionCountry": "US"
+  },
+  {
+    "id": "anton3-2026",
+    "title": "Anton 3 Biomolecular Simulation Allocations",
+    "agency": "Pittsburgh Supercomputing Center",
+    "code": "2026 call · April 2027 allocations",
+    "support": "Compute",
+    "audience": "both",
+    "studentAccess": "check",
+    "summary": "Special-purpose molecular-dynamics computing for prepared biomolecular research projects.",
+    "tags": [
+      "Biomedical",
+      "Drug discovery",
+      "Molecular dynamics",
+      "Scientific computing"
+    ],
+    "collections": [
+      "compute",
+      "students"
+    ],
+    "deadline": "2026-10-23T23:59",
+    "deadlineTimezone": "America/New_York",
+    "deadlineType": "fixed",
+    "deadlineNote": "October 23, 2026, 11:59 pm EDT. Create the PSC account at least two days earlier (by October 21).",
+    "url": "https://www.psc.edu/resources/anton/",
+    "relatedSources": [
+      {
+        "label": "2026 request for proposals",
+        "url": "https://www.psc.edu/wp-content/uploads/2026/08/Anton_3_RFP.pdf"
+      },
+      {
+        "label": "PSC allocation portal",
+        "url": "https://allocations.psc.edu"
+      }
+    ],
+    "amount": "Up to 9.1 machine-days per PI; noncommercial molecular dynamics",
+    "eligibility": "US academic/nonprofit faculty or staff PI; one PI application per round. Students/postdocs participate through a qualified PI; international co-PIs are allowed. Requires a technically feasible biomolecular simulation, not general ML/GPU training. Returning PIs must supply a progress report; data-sharing conditions apply.",
+    "checked": "2026-10-11",
+    "reason": "",
+    "institutionCountry": "US"
+  },
+  {
+    "id": "alliance-rac-2027",
+    "title": "Alliance Resource Allocation Competition",
+    "agency": "Digital Research Alliance of Canada",
+    "code": "2027 RAC",
+    "support": "Compute",
+    "audience": "both",
+    "studentAccess": "check",
+    "canadianAppointment": true,
+    "summary": "Annual compute, storage and cloud allocations beyond Rapid Access Service resources.",
+    "tags": [
+      "Scientific computing",
+      "Machine learning",
+      "GPU",
+      "Canada"
+    ],
+    "collections": [
+      "canada",
+      "compute",
+      "ml",
+      "students"
+    ],
+    "deadline": "2026-11-03T23:59",
+    "deadlineTimezone": "America/Toronto",
+    "deadlineType": "fixed",
+    "deadlineNote": "September 23–November 3, 2026, 11:59 pm EST. Allocations start in early April 2027. Timing verified through UBC ARC; confirm full competition requirements with the Alliance.",
+    "url": "https://arc.ubc.ca/news/september-09-2026/digital-research-alliance-canada-resource-allocation-competition-opens-0",
+    "relatedSources": [
+      {
+        "label": "Alliance RAC guide (full guide not independently retrieved)",
+        "url": "https://docs.alliancecan.ca/wiki/RAC_application_guide"
+      },
+      {
+        "label": "Alliance access eligibility",
+        "url": "https://ccdb.alliancecan.ca/agreements/access_policy_2022/user_display"
+      }
+    ],
+    "amount": "Compute, storage and cloud allocations; assessed by requested resources",
+    "eligibility": "An eligible Canadian institutional PI must lead or sponsor the project. Collaborators and students participate through that PI. Canadian citizenship alone does not establish eligibility; verify RAC-specific conditions.",
+    "checked": "2026-10-11",
+    "reason": ""
+  },
+  {
+    "id": "nserc-alliance-international",
+    "title": "Alliance International Collaboration Grants",
+    "agency": "NSERC",
+    "code": "Reopened 2026 competition",
+    "support": "Grant",
+    "audience": "faculty",
+    "canadianAppointment": true,
+    "summary": "Funding for the Canadian side of jointly planned international academic research.",
+    "tags": [
+      "Statistics",
+      "Machine learning",
+      "Scientific computing",
+      "Canada",
+      "Research collaboration"
+    ],
+    "collections": [
+      "canada",
+      "ml"
+    ],
+    "deadline": "2026-11-25T20:00",
+    "deadlineTimezone": "America/Toronto",
+    "deadlineType": "fixed",
+    "deadlineNote": "November 25, 2026, before 8 pm Eastern. Normally apply within 120 days of the international award; transitional cases must contact NSERC. Catalyst grants remain closed indefinitely.",
+    "url": "https://nserc-crsng.canada.ca/en/funding-opportunity/alliance-international-collaboration-grants",
+    "amount": "CAD$20,000–100,000 annually for up to 3 years, for Canadian activities only",
+    "eligibility": "Eligible Canadian applicants/co-applicants need an active peer-reviewed NSERC award as primary applicant. International university faculty need their own national peer-reviewed award, whose original proposal includes the Canadian team and roles. NSERC does not cover international collaborators’ expenses. Each team supplies at least 25% of the combined budget; one application per 12 months.",
+    "checked": "2026-10-11",
     "reason": ""
   }
 ];
