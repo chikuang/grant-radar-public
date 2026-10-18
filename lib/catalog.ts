@@ -3,7 +3,7 @@ import type {Grant} from './grants';
 // Public program facts only. Never copy an individual’s profile, research-fit notes or tracked items here.
 export const publicCatalog:Grant[] = [
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "faculty",
     "support": "Grant",
@@ -29,7 +29,7 @@ export const publicCatalog:Grant[] = [
     "institutionCountry": "US"
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "2027-07-28",
     "audience": "faculty",
     "support": "Grant",
@@ -55,14 +55,14 @@ export const publicCatalog:Grant[] = [
     "institutionCountry": "US"
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "2026-10-16",
     "audience": "faculty",
     "support": "Grant",
     "id": "nih-r21",
     "title": "Exploratory / Developmental Research",
     "agency": "NIH",
-    "code": "Parent R21 · PA-25-304",
+    "code": "Parent R21 · October 2026 round",
     "summary": "Exploratory biomedical methods addressing a defined health question.",
     "tags": [
       "Biomedical",
@@ -73,14 +73,14 @@ export const publicCatalog:Grant[] = [
       "ml"
     ],
     "deadlineType": "date",
-    "deadlineNote": "New applications: October 16, 2026, 5 pm institutional local time. Resubmissions have different dates.",
+    "deadlineNote": "The October 16, 2026 new-application round is closed. The separately listed next new-application date is February 16, 2027. November 16, 2026 is for eligible resubmissions/revisions, not new applications.",
     "url": "https://grants.nih.gov/grants/guide/pa-files/PA-25-304.html",
     "amount": "Up to US$275,000 direct costs over 2 years",
     "eligibility": "Must fit a participating NIH institute. Clinical trials are not allowed. Confirm institute participation, registrations, and application type.",
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "faculty",
     "support": "Grant",
@@ -105,7 +105,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "faculty",
     "support": "Grant",
@@ -130,7 +130,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "2026-11-04T23:59",
     "audience": "faculty",
     "support": "Research award",
@@ -164,7 +164,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "both",
     "support": "Compute",
@@ -193,7 +193,7 @@ export const publicCatalog:Grant[] = [
     "institutionCountry": "US"
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "both",
     "support": "Compute",
@@ -222,7 +222,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "both",
     "support": "Compute",
@@ -251,7 +251,7 @@ export const publicCatalog:Grant[] = [
     "studentAccess": "check"
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "both",
     "support": "Compute",
@@ -280,7 +280,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "2026-11-02T20:00",
     "audience": "faculty",
     "support": "Grant",
@@ -308,7 +308,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "2026-10-30",
     "audience": "students",
     "support": "Fellowship",
@@ -336,7 +336,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "2026-10-23T20:00",
     "audience": "students",
     "support": "Fellowship",
@@ -345,7 +345,7 @@ export const publicCatalog:Grant[] = [
     "agency": "NSF",
     "code": "GRFP · NSF 26-526",
     "studentAccess": "us",
-    "summary": "Early graduate research support for eligible mathematics and statistics students. Reference letters are due October 16, before applications.",
+    "summary": "Early graduate research support. The October 16 reference-letter deadline has passed; remaining applications require timely letters.",
     "tags": [
       "Graduate",
       "Statistics",
@@ -357,7 +357,7 @@ export const publicCatalog:Grant[] = [
     ],
     "deadlineTimezone": "America/New_York",
     "deadlineType": "fixed",
-    "deadlineNote": "Reference letters are due FIRST: October 16, 2026, 8 pm Eastern. Mathematical Sciences applications: October 23, 8 pm Eastern; CISE: October 20, 8 pm Eastern. Select the correct field.",
+    "deadlineNote": "Reference letters closed October 16, 2026, 8 pm Eastern. Confirm required letters were received on time before proceeding. Mathematical Sciences applications: October 23, 8 pm Eastern; CISE: October 20, 8 pm Eastern. This is not a fresh entry point without timely letters.",
     "url": "https://www.nsf.gov/funding/opportunities/grfp-nsf-graduate-research-fellowship-program/nsf26-526/solicitation",
     "amount": "US$37,000 annual stipend + US$16,000 institutional allowance; 3 years of support",
     "eligibility": "US citizens, nationals or permanent residents only. Graduate applicants must be in the first year of their first graduate degree with less than one academic year completed; second-year graduate students are ineligible. Graduate applicants may apply once. Separate rules cover undergraduates and joint bachelor’s/master’s students; check field and prior-application restrictions.",
@@ -365,7 +365,7 @@ export const publicCatalog:Grant[] = [
     "institutionCountry": "US"
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "2026-10-19T20:00",
     "audience": "students",
     "support": "Scholarship",
@@ -395,7 +395,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "students",
     "support": "Fellowship",
@@ -423,7 +423,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "2026-11-04T23:59",
     "audience": "faculty",
     "id": "amazon-agentic-ai",
@@ -458,7 +458,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "both",
     "id": "nvidia-academic",
@@ -494,7 +494,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "both",
     "id": "google-trc",
@@ -523,7 +523,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "both",
     "id": "anthropic-researcher",
@@ -552,7 +552,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "faculty",
     "id": "anthropic-science",
@@ -582,7 +582,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "faculty",
     "id": "azure-research",
@@ -609,7 +609,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "faculty",
     "id": "taiwan-nstc-short-visit",
@@ -636,7 +636,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "faculty",
     "id": "taiwan-nstc-visiting-faculty",
@@ -663,7 +663,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "faculty",
     "id": "taiwan-ncts-pairs",
@@ -683,7 +683,7 @@ export const publicCatalog:Grant[] = [
       "taiwan"
     ],
     "deadlineType": "unknown",
-    "deadlineNote": "Calls are announced in April, August and December. Exact next cutoff unconfirmed; applying at least three months before the visit is recommended.",
+    "deadlineNote": "Calls are announced in April, August and December. The readable 2026 notice remains the verified source; a newer 2026–27 notice could not be retrieved. Exact next cutoff is unconfirmed. Applying at least three months before the visit is recommended.",
     "url": "https://ncts.ntu.edu.tw/news_detail.php?nid=231",
     "relatedSources": [
       {
@@ -696,7 +696,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "faculty",
     "id": "taiwan-nchc-compute",
@@ -725,7 +725,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "both",
     "support": "Compute",
@@ -766,7 +766,7 @@ export const publicCatalog:Grant[] = [
     "institutionCountry": "US"
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "both",
     "support": "Compute",
@@ -812,7 +812,7 @@ export const publicCatalog:Grant[] = [
     "institutionCountry": "US"
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "both",
     "support": "Compute",
@@ -853,7 +853,7 @@ export const publicCatalog:Grant[] = [
     "institutionCountry": "US"
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "faculty",
     "support": "Compute",
@@ -889,7 +889,7 @@ export const publicCatalog:Grant[] = [
     "institutionCountry": "US"
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "both",
     "support": "Compute",
@@ -925,7 +925,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "both",
     "support": "Compute",
@@ -955,7 +955,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "both",
     "support": "Compute",
@@ -991,7 +991,7 @@ export const publicCatalog:Grant[] = [
     ]
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "faculty",
     "support": "Compute",
@@ -1019,7 +1019,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "faculty",
     "support": "Compute",
@@ -1047,7 +1047,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "faculty",
     "support": "Compute",
@@ -1075,7 +1075,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "faculty",
     "support": "Compute",
@@ -1109,7 +1109,7 @@ export const publicCatalog:Grant[] = [
     "reason": ""
   },
   {
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "deadline": "",
     "audience": "faculty",
     "support": "Compute",
@@ -1170,7 +1170,7 @@ export const publicCatalog:Grant[] = [
     ],
     "amount": "API credits and higher rate limits; amount determined by review",
     "eligibility": "Academic/research affiliation is required; faculty, research staff and PhD students are included. Supported locations and program terms apply. Review interests include evaluation, safety, reasoning, multimodal learning and scientific discovery.",
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "reason": ""
   },
   {
@@ -1205,7 +1205,7 @@ export const publicCatalog:Grant[] = [
     ],
     "amount": "Resource allocations, generally for 12 months; no universal maximum",
     "eligibility": "US-based institutional researchers, including postdocs, can lead requests. Graduate students need a qualified PI. Provider restrictions apply. A scientific/resource justification, scaling evidence and CVs are required.",
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "reason": "",
     "institutionCountry": "US"
   },
@@ -1245,7 +1245,7 @@ export const publicCatalog:Grant[] = [
     ],
     "amount": "Up to 9.1 machine-days per PI; noncommercial molecular dynamics",
     "eligibility": "US academic/nonprofit faculty or staff PI; one PI application per round. Students/postdocs participate through a qualified PI; international co-PIs are allowed. Requires a technically feasible biomolecular simulation, not general ML/GPU training. Returning PIs must supply a progress report; data-sharing conditions apply.",
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "reason": "",
     "institutionCountry": "US"
   },
@@ -1288,7 +1288,7 @@ export const publicCatalog:Grant[] = [
     ],
     "amount": "Compute, storage and cloud allocations; assessed by requested resources",
     "eligibility": "An eligible Canadian institutional PI must lead or sponsor the project. Collaborators and students participate through that PI. Canadian citizenship alone does not establish eligibility; verify RAC-specific conditions.",
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "reason": ""
   },
   {
@@ -1318,7 +1318,137 @@ export const publicCatalog:Grant[] = [
     "url": "https://nserc-crsng.canada.ca/en/funding-opportunity/alliance-international-collaboration-grants",
     "amount": "CAD$20,000–100,000 annually for up to 3 years, for Canadian activities only",
     "eligibility": "Eligible Canadian applicants/co-applicants need an active peer-reviewed NSERC award as primary applicant. International university faculty need their own national peer-reviewed award, whose original proposal includes the Canadian team and roles. NSERC does not cover international collaborators’ expenses. Each team supplies at least 25% of the combined budget; one application per 12 months.",
-    "checked": "2026-10-11",
+    "checked": "2026-10-18",
     "reason": ""
+  },
+  {
+    "id": "nih-r21-feb-2027",
+    "title": "Exploratory / Developmental Research — February 2027",
+    "agency": "NIH",
+    "code": "Parent R21 · PA-25-304 · new applications",
+    "summary": "The next published new-application round for exploratory biomedical research; the October 2026 record remains closed.",
+    "tags": [
+      "Biomedical",
+      "Neuroscience",
+      "Machine learning"
+    ],
+    "deadline": "2027-02-16",
+    "deadlineType": "date",
+    "deadlineNote": "February 16, 2027, 5 pm in the applicant organization’s local time, explicitly listed in the NOFO. Confirm the organization’s time zone and internal routing. Resubmissions use separate dates.",
+    "url": "https://grants.nih.gov/grants/guide/pa-files/PA-25-304.html",
+    "amount": "Up to US$275,000 direct costs over 2 years",
+    "eligibility": "Submit through an eligible organization and fit a participating NIH institute’s mission. Clinical trials are not allowed. Confirm registrations, application type and institutional approvals.",
+    "collections": [
+      "ml"
+    ],
+    "audience": "faculty",
+    "support": "Grant",
+    "checked": "2026-10-18",
+    "reason": ""
+  },
+  {
+    "id": "microsoft-quine-fellowship",
+    "title": "Quine Research Fellowship",
+    "agency": "Microsoft Research",
+    "code": "2027 research fellowship",
+    "summary": "A 16-week computational-biology fellowship, June 7–September 24, 2027, hosted in Cambridge, Massachusetts.",
+    "tags": [
+      "Machine learning",
+      "Biomedical",
+      "Drug discovery",
+      "Experimental design",
+      "Uncertainty quantification"
+    ],
+    "deadline": "2026-11-02",
+    "deadlineType": "date",
+    "deadlineNote": "Applications September 29–November 2, 2026. Exact cutoff time, time zone and participation requirements must be confirmed in the application materials; no cutoff is assumed here.",
+    "url": "https://microsoft.github.io/quine/index.html",
+    "relatedSources": [
+      {
+        "label": "Fellowship application portal (sign-in required for details)",
+        "url": "https://webportalapp.com/sp/login/msr_quine_research_fellows"
+      },
+      {
+        "label": "Microsoft announcement",
+        "url": "https://www.microsoft.com/en-us/research/blog/introducing-quine-an-ai-research-system-designed-for-the-complexity-of-biology/"
+      }
+    ],
+    "amount": "Financial support plus Quine and computing access; amount unpublished; possible experimental support",
+    "eligibility": "PhD candidates, postdocs, research scientists, and academic or independent researchers may apply. Selection and written terms govern support. Confirm faculty leave, Cambridge activities and any visa/appointment conditions. Protein/enzyme design, perturbation experiments and early therapeutics are relevant themes.",
+    "collections": [
+      "industry",
+      "ml",
+      "compute",
+      "students"
+    ],
+    "audience": "both",
+    "studentAccess": "check",
+    "support": "Fellowship",
+    "checked": "2026-10-18",
+    "reason": ""
+  },
+  {
+    "id": "canada-postdoctoral-nserc-2026",
+    "title": "Canada Postdoctoral Research Award — NSERC",
+    "agency": "NSERC",
+    "code": "CPRA · 2026 application round",
+    "summary": "Postdoctoral research training for eligible graduating doctoral researchers and postdocs; not funding to complete a degree.",
+    "tags": [
+      "Postdoctoral",
+      "Statistics",
+      "Machine learning",
+      "Canada"
+    ],
+    "deadline": "2026-10-19T20:00",
+    "deadlineTimezone": "America/Toronto",
+    "deadlineType": "fixed",
+    "deadlineNote": "NSERC route: October 17 falls on a weekend, so submit before October 19, 2026, 8 pm Eastern. Supporting letters are due too. Other agencies have different deadlines.",
+    "url": "https://nserc-crsng.canada.ca/en/funding-opportunity/canada-postdoctoral-research-award-program",
+    "relatedSources": [
+      {
+        "label": "NSERC deadlines and weekend rule",
+        "url": "https://nserc-crsng.canada.ca/en/funding/students-and-postdoctoral-researchers/scholarship-and-postdoctoral-award-programs"
+      }
+    ],
+    "amount": "CAD$70,000 per year for 24 months",
+    "eligibility": "Doctoral/health-professional degree required by award start, normally completed within three years before September 1, with exceptions. Tenured/tenure-track faculty, including those on leave, are ineligible. Overseas tenure requires qualifying Canadian status AND a Canadian doctoral/health-professional degree. Other nationality, host, previous-award and application-limit rules apply.",
+    "collections": [
+      "canada",
+      "students",
+      "ml"
+    ],
+    "audience": "students",
+    "studentAccess": "canada",
+    "support": "Fellowship",
+    "checked": "2026-10-18",
+    "reason": ""
+  },
+  {
+    "id": "nsf-ai-infrastructure-hubs",
+    "title": "State and Regional AI Infrastructure Hubs",
+    "agency": "NSF",
+    "code": "NSF 26-513 · institutional consortium",
+    "summary": "Regional AI consortia support research-computing coordination, workforce development, faculty training and AI coursework.",
+    "tags": [
+      "Machine learning",
+      "Scientific computing",
+      "AI education",
+      "Research infrastructure"
+    ],
+    "deadline": "2026-11-04",
+    "deadlineType": "date",
+    "deadlineNote": "November 4, 2026, 5 pm submitting-organization local time. No federal LOI or preliminary proposal is required. One proposal per lead institution: confirm earlier internal selection and authorization before planning a submission.",
+    "url": "https://www.nsf.gov/funding/opportunities/us-national-science-foundation-state-regional-artificial/nsf26-513/solicitation",
+    "amount": "Typical hub: US$4–12 million over 5 years; consortium funds the computing resources",
+    "eligibility": "Eligible US higher-education or research nonprofit organization leads a consortium. One proposal per lead institution and per person as PI/co-PI/senior-key personnel. Requires at least one regional industry/nonprofit partner and documented compute funding. NSF supports coordination/training; this is not an individual GPU allocation.",
+    "collections": [
+      "compute",
+      "ml"
+    ],
+    "audience": "faculty",
+    "support": "Grant",
+    "checked": "2026-10-18",
+    "reason": "",
+    "institutionCountry": "US"
   }
 ];
